@@ -8,4 +8,8 @@ class ProcChainer
   def | alambda
     self
   end
+
+  def call arg
+    arg
+  end
 end

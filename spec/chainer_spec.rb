@@ -9,4 +9,10 @@ describe ProcChainer do
 
     specify { subject.must_equal chainer }    
   end
+
+  describe 'call takes arg returns it' do
+    subject { chainer.call :test }
+
+    specify { subject.must_equal :test }
+  end
 end
