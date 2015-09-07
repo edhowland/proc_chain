@@ -15,4 +15,12 @@ describe ProcChainer do
 
     specify { subject.must_equal :test }
   end
+
+  describe '2 lambdas chained' do
+    let(:my_chain) { ProcChainer.new( ->(x){ x + 1 }) }
+    let(:two_lambdas) { my_chain | ->(x){ x * 2 } }
+    subject { two_lambdas.call(1) }
+
+  specify { subject.must_equal 4 }
+  end
 end
