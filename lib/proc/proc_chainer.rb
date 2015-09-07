@@ -6,5 +6,6 @@ class ProcChainer
   end
 
   def | alambda
+    self
   end
 end
