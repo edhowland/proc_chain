@@ -3,8 +3,7 @@
 module ProcChain
   refine(Proc) do
     def say
-      puts "in Proc Id"
+      "in Proc"
     end
   end
-
 end

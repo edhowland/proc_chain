@@ -3,9 +3,10 @@
 require_relative 'spec_helper'
 
 describe Proc do
-  describe 'should not respond to | method' do
-    subject { ->{} }
+  describe 'say method raises NoMethodError' do
+    let(:sayer) { ->{ true } }
+    subject {sayer.say }
 
-  specify { subject.wont_respond_to :say }
+  specify { ->{ subject }.must_raise NoMethodError }
   end
 end
