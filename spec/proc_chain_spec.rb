@@ -4,10 +4,10 @@ using ProcChain
 
 
 describe Proc do
-  describe 'should not respond to | method' do
-    let(:sayer) { ->{true} }
-    subject {sayer.| :test }
+  describe 'returns ProcChainer' do
+    let(:chain) { ->(x) { x } }
+    subject { chain | ->(x){ x } }
 
-  specify { subject.must_equal 'in Proc: test' }
+    specify { subject.must_be_instance_of ProcChainer }
   end
 end
