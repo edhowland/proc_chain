@@ -1,0 +1,7 @@
+# TODO Items
+
+- Create initial release 0.1 - addd version module
+- Generate gemspec
+- Link to Bungaku library
+- Develop inverse pub/sub model for plugin configuration in Bungaku
+
