@@ -24,4 +24,11 @@ describe Proc do
 
   specify { subject.must_equal 7 }
   end 
+
+  describe '4 closures returning Adventure magic spell' do
+    let(:chain) { ->(x){ 'x' } | ->(x){ x + 'y' } | ->(x){ x + 'zz' } | ->(x){ x + 'y' } }
+    subject { chain.call '' }
+
+    specify { subject.must_equal 'xyzzy' }
+  end
 end
