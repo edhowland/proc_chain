@@ -2,8 +2,8 @@
 
 module ProcChain
   refine(Proc) do
-    def say
-      "in Proc"
+    def | arg
+      "in Proc: #{arg}"
     end
   end
 end

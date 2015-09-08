@@ -6,8 +6,8 @@ using ProcChain
 describe Proc do
   describe 'should not respond to | method' do
     let(:sayer) { ->{true} }
-    subject {sayer.say }
+    subject {sayer.| :test }
 
-  specify { subject.must_equal 'in Proc' }
+  specify { subject.must_equal 'in Proc: test' }
   end
 end
