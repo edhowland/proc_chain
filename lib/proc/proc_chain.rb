@@ -3,7 +3,7 @@
 module ProcChain
   refine(Proc) do
     def | arg
-    ProcChainer.new(arg)
+    ProcChainer.new(self).|(arg)
     end
   end
 end
