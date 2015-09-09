@@ -6,6 +6,8 @@ class ProcChainer
     @lambdas = [alambda]
   end
 
+  attr_accessor :lambdas
+
   def | alambda
     @lambdas << alambda
     self
