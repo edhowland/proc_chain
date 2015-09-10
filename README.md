@@ -46,3 +46,38 @@ E.g.:
  ->(x){ x + 1 } | tee($stdout) 
 ```
 
+## How does it Work?
+
+
+ProcChain actually is just syntacticsugar around the following Composition design pattern:
+
+
+```
+
+  chain=[->(x){ x + 1}, ->(x){ x + 3}]
+chain.reduce(1) {|i, j| j.call(i) }
+
+```
+
+
+You can think of ProcChain as a mini-DSL for doing this kind of thing.
+Also, the elements in a chain do not have to be Lambdas.
+They onlyneed to be objects that respond to :call, taking a single
+object and returning a single object.
+
+
+## Examples/Use Cases
+
+### RPN Calculator
+
+
+See examples/rpn_calc.rb.
+A simple REPL that asks for a string of RPN style notation.
+Parses it with split and then mapsinto an array of
+Procs that process a stack.
+Then calls the ProcChain with a  as the stack.
+Finally, it prints the final result popped off the stack.
+
+
+Note: There is no syntax checking going on.
+
