@@ -15,7 +15,6 @@ end
 
 puts 'intermediate:'
 p rpn
-#rpn = [8, 2, :+, 5, 4, :*, :-]
 a= rpn.map do |e|
   case e
     when Integer
