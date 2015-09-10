@@ -4,7 +4,6 @@
 require_relative '../lib/proc_chain'
 
 # (5 * 4) - (8 + 2)
-strng =   '8 2 + 5 4 * -'
 def rpn_calc(strng)
   rpn = strng.split.map do |e|
     if e =~ /[\+\-\*\/]/
@@ -43,5 +42,7 @@ def rpn_calc(strng)
 
   result = chain.call([])
   puts result.pop
-
 end
+
+# main loop
+rpn_calc   '8 2 + 5 4 * -'
