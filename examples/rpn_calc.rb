@@ -45,4 +45,18 @@ def rpn_calc(strng)
 end
 
 # main loop
-rpn_calc   '8 2 + 5 4 * -'
+puts "RPN Calculator"
+puts 'Enter RPN notation: E.g. 5 4 + 1 2 - *'
+puts '^C to end'
+puts
+while true do
+  print 'rpn> '
+  strng = gets.chomp
+  puts rpn_calc(strng)
+end
+
+at_exit do
+  puts 'Exiting ...'
+  puts 'Thanks for using RPN Calculator!'
+end
+
