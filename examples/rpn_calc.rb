@@ -4,9 +4,18 @@
 require_relative '../lib/proc_chain'
 
 # (5 * 4) - (8 + 2)
-#  8 2 + 5 4 * -
+strng =   '8 2 + 5 4 * -'
+rpn = strng.split.map do |e|
+  if e =~ /[\+\-\*\/]/
+    e.to_sym
+  else
+    e.to_i
+  end
+end
 
-rpn = [8, 2, :+, 5, 4, :*, :-]
+puts 'intermediate:'
+p rpn
+#rpn = [8, 2, :+, 5, 4, :*, :-]
 a= rpn.map do |e|
   case e
     when Integer
